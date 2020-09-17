@@ -169,7 +169,7 @@ def get_response(rd):
             ),
             ("parameters", get_ref_query()),
             ("operationId", "get" + title),
-            ("tags", [rd["item_title"]]),
+            ("tags", [rd["resource_title"]]),
         ]
     )
 
@@ -199,7 +199,7 @@ def post_response(rd):
             ),
             ("parameters", []),
             ("operationId", "post" + rd["resource_title"]),
-            ("tags", [rd["item_title"]]),
+            ("tags", [rd["resource_title"]]),
         ]
     )
 
@@ -220,7 +220,7 @@ def delete_response(rd):
             ),
             ("parameters", []),
             ("operationId", "delete" + rd["resource_title"]),
-            ("tags", [rd["item_title"]]),
+            ("tags", [rd["resource_title"]]),
         ]
     )
 
@@ -249,7 +249,7 @@ def getitem_response_additional_lookup(rd):
             ),
             ("parameters", [additional_lookup_parameter(rd)]),
             ("operationId", "get" + title + "ItemBy" + field.title()),
-            ("tags", [rd["item_title"]]),
+            ("tags", [rd["resource_title"]]),
         ]
     )
 
@@ -277,7 +277,7 @@ def getitem_response(rd):
             ),
             ("parameters", [id_parameter(rd)]),
             ("operationId", "get" + title + "Item"),
-            ("tags", [rd["item_title"]]),
+            ("tags", [rd["resource_title"]]),
         ]
     )
 
@@ -300,7 +300,7 @@ def put_response(rd):
             ("requestBody", get_ref_requestBody(rd)),
             ("parameters", [id_parameter(rd), get_ref_ifmatch()]),
             ("operationId", "put" + title + "Item"),
-            ("tags", [title]),
+            ("tags", [rd["resource_title"]]),
         ]
     )
 
@@ -323,7 +323,7 @@ def patch_response(rd):
             ("requestBody", get_ref_requestBody(rd)),
             ("parameters", [id_parameter(rd), get_ref_ifmatch()]),
             ("operationId", "patch" + title + "Item"),
-            ("tags", [title]),
+            ("tags", [rd["resource_title"]]),
         ]
     )
 
@@ -345,7 +345,7 @@ def deleteitem_response(rd):
             ),
             ("parameters", [id_parameter(rd), get_ref_ifmatch()]),
             ("operationId", "delete" + title + "Item"),
-            ("tags", [rd["item_title"]]),
+            ("tags", [rd["resource_title"]]),
         ]
     )
 
