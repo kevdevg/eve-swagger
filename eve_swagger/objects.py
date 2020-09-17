@@ -284,7 +284,7 @@ def tags():
         if resource_name.endswith("_versions") or rd.get("disable_documentation"):
             continue
 
-        tagInfo = {"name": rd["item_title"]}
+        tagInfo = {"name": rd["resource_title"]}
 
         if "description" in rd:
             tagInfo["description"] = rd["description"]
